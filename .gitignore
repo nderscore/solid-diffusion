@@ -4,3 +4,5 @@ dist
 *.tgz
 .DS_Store
 npm-debug.log*
+.vscode
+.idea
