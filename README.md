@@ -1,11 +1,11 @@
 # Solid Diffusion
 
-Minimalist web-based interface for Stable Diffusion with persistant storage to the local browser built with SolidJS.
+Minimalist web-based interface for Stable Diffusion with persistant storage in the browser, built with SolidJS.
 
 (This project is a **__work-in-progress__** and is not feature complete. Come back later when it's done-er!)
 
 <div align="center">
-  <img src="./screenshots/prerelease.png" />
+  <img src="./screenshots/prerelease.png" alt="Screenshot" />
 </div>
 
 ## Features
@@ -45,7 +45,7 @@ If you would like to alpha-test (or help to build) Solid Diffusion, follow the s
 
 Then, run `pnpm build`.
 
-Then, copy the output from `dist/` into the `static/dream_web/`
+Then, copy the output from `dist/` into the `static/dream_web/` directory of your `stable-diffusion` folder.
 
 ## Contributing
 

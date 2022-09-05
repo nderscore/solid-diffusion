@@ -65,7 +65,7 @@ export type DreamSettings = {
    */
   fit: boolean;
   /**
-   * GFPGAN enabedDreamSettings
+   * GFPGAN enabed
    */
   gfpgan_enabled: boolean;
   /**
