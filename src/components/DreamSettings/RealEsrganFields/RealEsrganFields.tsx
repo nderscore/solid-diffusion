@@ -8,6 +8,7 @@ import { useUiSettingsField } from '~/state/UiSettings';
 
 import { RealEsrganEnabledField } from './RealEsrganEnabledField';
 import { RealEsrganScaleField } from './RealEsrganScaleField';
+import { RealEsrganStrengthField } from './RealEsrganStrengthField';
 
 export const RealEsrganFields: VoidComponent = () => {
   const [t] = useI18n();
@@ -23,6 +24,7 @@ export const RealEsrganFields: VoidComponent = () => {
     >
       <RealEsrganEnabledField />
       <Show when={enabled()}>
+        <RealEsrganStrengthField />
         <RealEsrganScaleField />
       </Show>
     </CollapsibleFieldgroup>

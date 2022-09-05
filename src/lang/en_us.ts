@@ -10,7 +10,7 @@ export const en_us = {
   dreamForget: 'Forget',
   dreamInfo: 'Info',
   enabled: 'Enabled',
-  gfpganStrength: 'GFPGAN Stength',
+  gfpganStrength: 'GFPGAN stength',
   height: 'Height',
   hide: 'Hide',
   loadingDreams: 'Loading dream log...',
@@ -24,6 +24,7 @@ export const en_us = {
   seed: 'Seed',
   submit: 'Submit',
   queue: 'Queue',
+  realEsrganStrength: 'RealESRGAN strength',
   reproduceImage: 'Reuse these settings (all)', // unused
   reuseSettings: 'Reuse these settings (without prompt/image)', // unused
   settings: 'Settings',
