@@ -8,6 +8,7 @@ import { GuidanceScaleField } from './GuidanceScaleField';
 import { HeightField } from './HeightField';
 import { SamplerField } from './SamplerField';
 import { SeedField } from './SeedField';
+import { StepsField } from './StepsField';
 import { WidthField } from './WidthField';
 
 export const GeneralFields: VoidComponent = () => {
@@ -24,8 +25,9 @@ export const GeneralFields: VoidComponent = () => {
       <WidthField />
       <HeightField />
       <GuidanceScaleField />
-      <SamplerField />
+      <StepsField />
       <SeedField />
+      <SamplerField />
     </CollapsibleFieldgroup>
   );
 };
