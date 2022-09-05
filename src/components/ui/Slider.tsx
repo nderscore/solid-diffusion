@@ -1,20 +1,20 @@
 import classNames from 'classnames';
-import type { JSX } from 'solid-js';
+import type { JSX, VoidComponent } from 'solid-js';
 
-import { DreamSettingsAtomType } from '~/state/DreamSettings';
-
-export type DreamSliderProps<K extends keyof DreamSettingsAtomType> = {
+export type SliderProps = {
   class?: string;
-  field: K;
   label: string;
+  max: number;
+  min: number;
+  step?: number;
   name: string;
   value: number;
   set: (next: number) => void;
 };
 
-export const DreamSlider = <K extends keyof DreamSettingsAtomType>(props: DreamSliderProps<K>) => {
+export const Slider: VoidComponent<SliderProps> = (props) => {
   const onInput: JSX.EventHandler<HTMLInputElement, Event> = (e) =>
-    props.set(parseInt(e.currentTarget.value));
+    props.set((props.step ?? 1 < 1 ? parseFloat : parseInt)(e.currentTarget.value));
 
   return (
     <div class="form-control">
@@ -25,14 +25,14 @@ export const DreamSlider = <K extends keyof DreamSettingsAtomType>(props: DreamS
         <input
           class={classNames('range', props.class)}
           type="range"
-          max={1024}
-          min={64}
+          max={props.max}
+          min={props.min}
           name={props.name}
-          step={64}
+          step={props.step}
           value={props.value}
           onInput={onInput}
         />
-        <div class="w-10 text-center">{props.value}</div>
+        <div class="w-16 text-center">{props.value}</div>
       </div>
     </div>
   );

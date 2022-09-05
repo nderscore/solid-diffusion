@@ -4,6 +4,9 @@ import type { VoidComponent } from 'solid-js';
 import { CollapsibleFieldgroup } from '~/components/ui/CollapsibleFieldgroup';
 import { useUiSettingsField } from '~/state/UiSettings';
 
+import { HeightField } from './HeightField';
+import { WidthField } from './WidthField';
+
 export const GeneralFields: VoidComponent = () => {
   const [t] = useI18n();
   const [open, setOpen] = useUiSettingsField('generalFieldsOpen');
@@ -15,7 +18,8 @@ export const GeneralFields: VoidComponent = () => {
       onClick={() => setOpen(!open())}
       id="settings-general"
     >
-      TODO: General fields
+      <WidthField />
+      <HeightField />
     </CollapsibleFieldgroup>
   );
 };
