@@ -16,9 +16,9 @@ export const en_us = {
   weight: 'Weight',
   weight_plural: 'Weights',
   width: 'Width',
-  randomize: 'Randomize', // unused
+  randomize: 'Randomize',
   sampler: 'Sampler', // unused
-  seed: 'Seed', // unused
+  seed: 'Seed',
   submit: 'Submit',
   queue: 'Queue',
   reproduceImage: 'Reuse these settings (all)', // unused
