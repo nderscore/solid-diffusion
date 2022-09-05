@@ -11,13 +11,13 @@ export const GuidanceScaleField: VoidComponent = () => {
   return (
     <Slider
       label={t('cfgScale')}
-      max={20}
+      max={50}
       min={-20}
       name="cfgscale"
-      step={0.25}
+      step={0.5}
       value={cfg()}
       set={setCfg}
-      warn={cfg() <= 0 || cfg() > 15}
+      warn={cfg() <= 0 || cfg() > 20}
     />
   );
 };
