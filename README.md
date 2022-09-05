@@ -8,7 +8,6 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 
 <div align="center">
   <img src="./screenshots/prerelease.png" alt="Screenshot" />
-  <img src="./screenshots/prerelease2.png" alt="Screenshot" />
 </div>
 
 ## Features
@@ -18,10 +17,10 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 * Persistent settings
 * Persistent dream storage
 * Multiple themes (thanks [daisyUI](https://daisyui.com)!)
+* Settings UI controls
 
 ### Planned features
 
-* Settings UI controls
 * Queue management (cancel queued or in-progress dreams)
 * Image-to-image input with preview
 * Reproduce settings from logged dreams
