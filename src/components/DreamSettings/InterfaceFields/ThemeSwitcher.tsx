@@ -1,34 +1,32 @@
 import { useI18n } from '@solid-primitives/i18n';
-import type { VoidComponent } from 'solid-js';
-import { For, JSX } from 'solid-js';
+import { createMemo, VoidComponent } from 'solid-js';
 
-import { ThemeName, themes } from '~/constants';
+import { Select } from '~/components/ui/Select';
+import { themes } from '~/constants';
 import { useUiSettingsField } from '~/state/UiSettings';
 
-const options = ['', ...themes];
+const optionsList = ['', ...themes];
 
 export const ThemeSwitcher: VoidComponent = () => {
   const [t] = useI18n();
   const [theme, setTheme] = useUiSettingsField('theme');
 
-  const onChange: JSX.EventHandler<HTMLSelectElement, Event> = (e) => {
-    setTheme(e.currentTarget.value as ThemeName | '');
-  };
+  const options = createMemo(() => {
+    const defaultLabel = t('settingsFieldThemeDefault') as string;
+    return optionsList.map((option) => ({
+      label: option || defaultLabel,
+      value: option,
+    }));
+  });
 
   return (
-    <div class="form-control">
-      <label class="label" for="theme">
-        <span class="label-text">{t('settingsFieldTheme')}</span>
-      </label>
-      <select class="select select-bordered" name="theme" onChange={onChange}>
-        <For each={options}>
-          {(option) => (
-            <option value={option} selected={option === theme()}>
-              {option || t('settingsFieldThemeDefault')}
-            </option>
-          )}
-        </For>
-      </select>
-    </div>
+    <Select
+      class="select-bordered"
+      label={t('settingsFieldTheme')}
+      name="theme"
+      options={options()}
+      value={theme()}
+      set={setTheme}
+    />
   );
 };
