@@ -21,7 +21,6 @@ export const ThemeSwitcher: VoidComponent = () => {
 
   return (
     <Select
-      class="select-bordered"
       label={t('settingsFieldTheme')}
       name="theme"
       options={options()}

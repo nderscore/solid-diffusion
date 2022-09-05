@@ -20,7 +20,6 @@ export const SamplerField: VoidComponent = () => {
 
   return (
     <Select
-      class="select-bordered"
       label={t('sampler')}
       name="sampler"
       options={options()}
