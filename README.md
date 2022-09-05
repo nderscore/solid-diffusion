@@ -41,7 +41,7 @@ Currently, only the [lstein fork](https://github.com/lstein/stable-diffusion/) o
 
 You must **already have this configured and working** before you can set up Solid Diffusion.
 
-### (Temporary) Setup  instructions
+### (Temporary) Setup instructions
 
 Because this project is very incomplete, builds aren't being provided yet.
 
@@ -50,6 +50,8 @@ If you would like to alpha-test (or help to build) Solid Diffusion, follow the s
 Then, run `pnpm build`.
 
 Then, copy the output from `dist/` into the `static/dream_web/` directory of your `stable-diffusion` folder.
+
+Then launch the dream server with the `--web` flag: `python scripts/dream.py --web`
 
 ## Contributing
 
