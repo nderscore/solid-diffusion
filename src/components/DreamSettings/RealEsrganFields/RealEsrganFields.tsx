@@ -7,6 +7,7 @@ import { useDreamSettingsField } from '~/state/DreamSettings';
 import { useUiSettingsField } from '~/state/UiSettings';
 
 import { RealEsrganEnabledField } from './RealEsrganEnabledField';
+import { RealEsrganScaleField } from './RealEsrganScaleField';
 
 export const RealEsrganFields: VoidComponent = () => {
   const [t] = useI18n();
@@ -21,7 +22,9 @@ export const RealEsrganFields: VoidComponent = () => {
       id="settings-realesrgan"
     >
       <RealEsrganEnabledField />
-      <Show when={enabled()}>TODO: RealESRGAN fields</Show>
+      <Show when={enabled()}>
+        <RealEsrganScaleField />
+      </Show>
     </CollapsibleFieldgroup>
   );
 };

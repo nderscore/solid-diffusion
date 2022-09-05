@@ -36,4 +36,6 @@ export const en_us = {
   settingsGroupRealEsrgan: 'RealESRGAN (Upscaling)',
   show: 'Show',
   steps: 'Steps',
+  x2scale: '2x scale',
+  x4scale: '4x scale',
 } as const;
