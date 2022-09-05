@@ -1,0 +1,89 @@
+/* TODO: clean this up */
+@import url('/node_modules/the-new-css-reset/css/reset.css');
+
+/* unreset this property that daisyUI expects */
+select {
+  align-items: center;
+}
+
+/* unreset pre */
+pre {
+  white-space: pre;
+}
+
+/* custom responsive variables */
+:root {
+  /* variable to enable positioning/sizing based on navbar height */
+  --navbar-height: 4rem;
+  --grid-width: min(calc(100vw - 1rem), 32rem);
+  --grid-height: calc(var(--grid-width) + 6.25rem);
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --navbar-height: 6rem;
+  }
+}
+
+/* utilities for 100vh minus navbar */
+.h-screen-navbar {
+  height: calc(100vh - var(--navbar-height));
+}
+.max-h-screen-navbar {
+  max-height: calc(100vh - var(--navbar-height));
+}
+
+/* custom dream log styles */
+.grid-dreamlog {
+  grid-template-columns: repeat(auto-fill, var(--grid-width));
+  grid-template-rows: repeat(auto-fill, var(--grid-height));
+  grid-auto-flow: row;
+  justify-content: center;
+}
+.w-dreamlog-grid-width {
+  width: var(--grid-width);
+}
+.h-dreamlog-grid-width {
+  height: var(--grid-width);
+}
+.card-dreamlog {
+  width: var(--grid-width);
+}
+.figure-dreamlog {
+  height: var(--grid-width);
+  width: var(--grid-width);
+}
+.figure-dreamlog img {
+  object-fit: contain;
+}
+
+/* progress indicator */
+.dream-progress-indicator {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: max(2px, calc(100% * (var(--progress-step) / var(--progress-step-total))));
+  height: 0.25rem;
+}
+
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * daisyUI overrides
+ */
+
+/* set focus border inner on field group toggle buttons */
+.btn-fieldgroup:focus-visible {
+  outline-offset: -2px;
+}
+
+/* disable all CSS animations and transitions from daisyUI (reduce browser GPU usage) */
+*,
+*::before,
+*::after {
+  transition: none !important; 
+  animation: none !important;
+}

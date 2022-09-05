@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+		"explorer.fileNesting.enabled": true,
+		"explorer.fileNesting.patterns": {
+			"package.json": "pnpm-lock.yaml",
+			"*": "${basename}.*.${extname}"
+		},
+		"files.exclude": {
+			"**/node_modules": true
+		}
+	},
+  "extensions": {
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss"
+    ]
+  }
+}
