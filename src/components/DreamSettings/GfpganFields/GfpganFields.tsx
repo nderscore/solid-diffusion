@@ -7,6 +7,7 @@ import { useDreamSettingsField } from '~/state/DreamSettings';
 import { useUiSettingsField } from '~/state/UiSettings';
 
 import { GfpganEnabledField } from './GfpganEnabledField';
+import { GfpganStrengthField } from './GfpganStrengthField';
 
 export const GfpganFields: VoidComponent = () => {
   const [t] = useI18n();
@@ -21,7 +22,9 @@ export const GfpganFields: VoidComponent = () => {
       id="settings-post-processing"
     >
       <GfpganEnabledField />
-      <Show when={enabled()}>TODO: GFPGAN fields</Show>
+      <Show when={enabled()}>
+        <GfpganStrengthField />
+      </Show>
     </CollapsibleFieldgroup>
   );
 };

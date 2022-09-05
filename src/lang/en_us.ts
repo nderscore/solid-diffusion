@@ -10,6 +10,7 @@ export const en_us = {
   dreamForget: 'Forget',
   dreamInfo: 'Info',
   enabled: 'Enabled',
+  gfpganStrength: 'GFPGAN Stength',
   height: 'Height',
   hide: 'Hide',
   loadingDreams: 'Loading dream log...',
