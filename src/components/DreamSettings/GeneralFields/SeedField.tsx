@@ -56,7 +56,9 @@ export const SeedField: VoidComponent = () => {
         <input
           class="input flex-grow"
           disabled={randomize()}
-          pattern="^\d+$"
+          max={0xffffffff}
+          min={0}
+          type={randomize() ? 'text' : 'number'}
           value={randomize() ? t('randomize') : seed()}
           onInput={onInput}
         />

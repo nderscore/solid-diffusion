@@ -18,7 +18,7 @@ export const defaultSettings: DreamSettingsAtomType = {
   sampler: 'k_lms',
   width: 512,
   height: 512,
-  seed: -1,
+  seed: 0,
   strength: 0.75,
   fit: true,
   gfpgan_enabled: false,
