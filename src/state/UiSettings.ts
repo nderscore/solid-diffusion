@@ -31,17 +31,16 @@ export const uiSettingsAtom = createLocalStorageAtom('uiSettings', defaultSettin
 
 export const useUiSettings = () => useAtom(uiSettingsAtom);
 
-export const useUiSettingsField = <K extends keyof UiSettings, V = UiSettings[K]>(props: {
-  field: K;
-}) => {
+export const useUiSettingsField = <K extends keyof UiSettings, V = UiSettings[K]>(field: K) => {
   const updateSettings = useAction(uiSettingsAtom.update);
   const value = createMemo(() => {
-    const atom = createAtom({ uiSettingsAtom }, ({ get }) => get('uiSettingsAtom')[props.field]);
+    const atom = createAtom({ uiSettingsAtom }, ({ get }) => get('uiSettingsAtom')[field]);
     const [value] = useAtom(atom);
     return value;
   });
   const setValue = (value: V) => {
-    updateSettings({ [props.field]: value });
+    updateSettings({ [field]: value });
   };
-  return [value, setValue] as const;
+  const getValue = () => value()();
+  return [getValue, setValue] as const;
 };

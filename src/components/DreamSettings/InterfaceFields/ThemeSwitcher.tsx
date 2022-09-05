@@ -9,7 +9,7 @@ const options = ['', ...themes];
 
 export const ThemeSwitcher: VoidComponent = () => {
   const [t] = useI18n();
-  const [theme, setTheme] = useUiSettingsField({ field: 'theme' });
+  const [theme, setTheme] = useUiSettingsField('theme');
 
   const onChange: JSX.EventHandler<HTMLSelectElement, Event> = (e) => {
     setTheme(e.currentTarget.value as ThemeName | '');
@@ -23,7 +23,7 @@ export const ThemeSwitcher: VoidComponent = () => {
       <select class="select select-bordered" name="theme" onChange={onChange}>
         <For each={options}>
           {(option) => (
-            <option value={option} selected={option === theme()()}>
+            <option value={option} selected={option === theme()}>
               {option || t('settingsFieldThemeDefault')}
             </option>
           )}

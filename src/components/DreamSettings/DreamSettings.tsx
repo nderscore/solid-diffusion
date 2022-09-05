@@ -13,10 +13,10 @@ import { InterfaceFields } from './InterfaceFields';
 import { RealEsrganFields } from './RealEsrganFields';
 
 export const DreamSettings: VoidComponent = () => {
-  const [settingsOpen] = useUiSettingsField({ field: 'settingsOpen' });
+  const [settingsOpen] = useUiSettingsField('settingsOpen');
 
   return (
-    <Show when={settingsOpen()()}>
+    <Show when={settingsOpen()}>
       <Drawer class="left-0 z-10">
         <ImageInputFields />
         <GeneralFields />

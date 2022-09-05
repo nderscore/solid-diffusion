@@ -15,7 +15,7 @@ import { useUiSettingsField } from '~/state/UiSettings';
 
 export const QueueButton: VoidComponent = () => {
   const [t] = useI18n();
-  const [queueOpen, setQueueOpen] = useUiSettingsField({ field: 'queueOpen' });
+  const [queueOpen, setQueueOpen] = useUiSettingsField('queueOpen');
   const [status] = useAtom(dreamStatusAtom);
   const [step] = useAtom(dreamStepAtom);
   const [totalSteps] = useAtom(dreamTotalStepAtom);
@@ -25,9 +25,9 @@ export const QueueButton: VoidComponent = () => {
     <button
       aria-label={t('queue')}
       class={classNames('btn lg:btn-lg relative', {
-        'btn-ghost': !queueOpen()(),
+        'btn-ghost': !queueOpen(),
       })}
-      onClick={() => setQueueOpen(!queueOpen()())}
+      onClick={() => setQueueOpen(!queueOpen())}
     >
       <Switch>
         <Match when={'empty' === status()}>

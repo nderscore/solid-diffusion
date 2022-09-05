@@ -8,13 +8,13 @@ import { ThemeSwitcher } from './ThemeSwitcher';
 
 export const InterfaceFields: VoidComponent = () => {
   const [t] = useI18n();
-  const [open, setOpen] = useUiSettingsField({ field: 'interfaceFieldsOpen' });
+  const [open, setOpen] = useUiSettingsField('interfaceFieldsOpen');
 
   return (
     <CollapsibleFieldgroup
       label={t('settingsGroupInterface')}
-      open={open()()}
-      onClick={() => setOpen(!open()())}
+      open={open()}
+      onClick={() => setOpen(!open())}
       id="settings-interface"
     >
       <ThemeSwitcher />

@@ -6,13 +6,13 @@ import { useUiSettingsField } from '~/state/UiSettings';
 
 export const ImageInputFields: VoidComponent = () => {
   const [t] = useI18n();
-  const [open, setOpen] = useUiSettingsField({ field: 'imageInputFieldsOpen' });
+  const [open, setOpen] = useUiSettingsField('imageInputFieldsOpen');
 
   return (
     <CollapsibleFieldgroup
       label={t('settingsGroupImageInput')}
-      open={open()()}
-      onClick={() => setOpen(!open()())}
+      open={open()}
+      onClick={() => setOpen(!open())}
       id="settings-image-input"
     >
       TODO: Image-to-image input

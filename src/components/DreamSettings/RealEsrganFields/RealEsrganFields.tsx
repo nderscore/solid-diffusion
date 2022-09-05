@@ -6,13 +6,13 @@ import { useUiSettingsField } from '~/state/UiSettings';
 
 export const RealEsrganFields: VoidComponent = () => {
   const [t] = useI18n();
-  const [open, setOpen] = useUiSettingsField({ field: 'realEsrganFieldsOpen' });
+  const [open, setOpen] = useUiSettingsField('realEsrganFieldsOpen');
 
   return (
     <CollapsibleFieldgroup
       label={t('settingsGroupRealEsrgan')}
-      open={open()()}
-      onClick={() => setOpen(!open()())}
+      open={open()}
+      onClick={() => setOpen(!open())}
       id="settings-realesrgan"
     >
       TODO: RealESRGAN fields

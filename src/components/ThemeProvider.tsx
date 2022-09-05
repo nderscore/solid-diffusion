@@ -11,10 +11,10 @@ const syncThemeToDom = (theme: ThemeName | '') => {
 };
 
 export const ThemeProvider: ParentComponent = (props) => {
-  const [theme] = useUiSettingsField({ field: 'theme' });
+  const [theme] = useUiSettingsField('theme');
 
   createEffect(() => {
-    syncThemeToDom(theme()());
+    syncThemeToDom(theme());
   });
 
   return <>{props.children}</>;

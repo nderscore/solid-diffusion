@@ -33,23 +33,18 @@ export const dreamSettingsAtom = createLocalStorageAtom('dreamSettings', default
 
 export const useDreamSettings = () => useAtom(dreamSettingsAtom);
 
-export const useDreamSettingsField = <
-  K extends keyof DreamSettingsAtomType,
-  V = DreamSettings[K]
->(props: {
-  field: K;
-}) => {
+export const useDreamSettingsField = <K extends keyof DreamSettingsAtomType, V = DreamSettings[K]>(
+  field: K
+) => {
   const updateSettings = useAction(dreamSettingsAtom.update);
   const value = createMemo(() => {
-    const atom = createAtom(
-      { dreamSettingsAtom },
-      ({ get }) => get('dreamSettingsAtom')[props.field]
-    );
+    const atom = createAtom({ dreamSettingsAtom }, ({ get }) => get('dreamSettingsAtom')[field]);
     const [value] = useAtom(atom);
     return value;
   });
   const setValue = (value: V) => {
-    updateSettings({ [props.field]: value });
+    updateSettings({ [field]: value });
   };
-  return [value, setValue] as const;
+  const getValue = () => value()();
+  return [getValue, setValue] as const;
 };
