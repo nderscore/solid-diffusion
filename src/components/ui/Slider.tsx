@@ -9,6 +9,7 @@ export type SliderProps = {
   name: string;
   percentage?: boolean;
   step?: number;
+  warn?: boolean;
   value: number;
   set: (next: number) => void;
 };
@@ -45,6 +46,13 @@ export const Slider: VoidComponent<SliderProps> = (props) => {
           step={props.step}
           value={value()}
           onInput={onInput}
+          style={
+            props.warn
+              ? {
+                  '--range-shdw': 'var(--wa)',
+                }
+              : undefined
+          }
         />
         <div class="w-16 text-center">
           {value()}

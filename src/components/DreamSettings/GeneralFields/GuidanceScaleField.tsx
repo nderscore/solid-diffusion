@@ -6,7 +6,7 @@ import { useDreamSettingsField } from '~/state/DreamSettings';
 
 export const GuidanceScaleField: VoidComponent = () => {
   const [t] = useI18n();
-  const [height, setCfg] = useDreamSettingsField('cfgscale');
+  const [cfg, setCfg] = useDreamSettingsField('cfgscale');
 
   return (
     <Slider
@@ -15,8 +15,9 @@ export const GuidanceScaleField: VoidComponent = () => {
       min={-20}
       name="cfgscale"
       step={0.25}
-      value={height()}
+      value={cfg()}
       set={setCfg}
+      warn={cfg() <= 0 || cfg() > 15}
     />
   );
 };
