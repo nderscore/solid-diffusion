@@ -4,6 +4,7 @@ import type { VoidComponent } from 'solid-js';
 import { CollapsibleFieldgroup } from '~/components/ui/CollapsibleFieldgroup';
 import { useUiSettingsField } from '~/state/UiSettings';
 
+import { GuidanceScaleField } from './GuidanceScaleField';
 import { HeightField } from './HeightField';
 import { WidthField } from './WidthField';
 
@@ -20,6 +21,7 @@ export const GeneralFields: VoidComponent = () => {
     >
       <WidthField />
       <HeightField />
+      <GuidanceScaleField />
     </CollapsibleFieldgroup>
   );
 };

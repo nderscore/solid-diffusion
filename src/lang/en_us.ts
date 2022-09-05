@@ -1,9 +1,9 @@
 export const en_us = {
   close: 'Close',
-  cancelAllDreams: 'Cancel All Dreams',
-  cancelDream: 'Cancel Dream',
   confirm: 'Confirm',
   copyImage: 'Copy image to clipboard',
+  cfgScale: 'Clip-free guidance scale',
+  cfgScaleShort: 'CFG scale', // unused
   dream: 'Dream',
   dreamAction: 'Action',
   dreamForget: 'Forget',
@@ -12,20 +12,17 @@ export const en_us = {
   hide: 'Hide',
   loadingDreams: 'Loading dream log...',
   prompt: 'Prompt',
-  prompt_plural: 'Prompts',
   prompt_placeholder: 'A beautiful user interface for dreaming',
-  progress: 'Progress: {{ percentage }}%',
   weight: 'Weight',
   weight_plural: 'Weights',
   width: 'Width',
-  randomize: 'Randomize',
-  sampler: 'Sampler',
-  seed: 'Seed',
+  randomize: 'Randomize', // unused
+  sampler: 'Sampler', // unused
+  seed: 'Seed', // unused
   submit: 'Submit',
-  job: 'Job',
   queue: 'Queue',
-  reproduceImage: 'Use these settings (all)',
-  reuseSettings: 'Use these settings (without prompt/image)',
+  reproduceImage: 'Reuse these settings (all)', // unused
+  reuseSettings: 'Reuse these settings (without prompt/image)', // unused
   settings: 'Settings',
   settingsFieldTheme: 'Theme',
   settingsFieldThemeDefault: '(Use OS setting)',
