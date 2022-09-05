@@ -4,10 +4,12 @@ export const en_us = {
   copyImage: 'Copy image to clipboard',
   cfgScale: 'Clip-free guidance scale',
   cfgScaleShort: 'CFG scale', // unused
+  disabled: 'Disabled',
   dream: 'Dream',
   dreamAction: 'Action',
   dreamForget: 'Forget',
   dreamInfo: 'Info',
+  enabled: 'Enabled',
   height: 'Height',
   hide: 'Hide',
   loadingDreams: 'Loading dream log...',
