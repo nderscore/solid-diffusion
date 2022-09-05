@@ -8,6 +8,7 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 
 <div align="center">
   <img src="./screenshots/prerelease.png" alt="Screenshot" />
+  <img src="./screenshots/prerelease2.png" alt="Screenshot" />
 </div>
 
 ## Features
