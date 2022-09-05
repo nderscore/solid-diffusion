@@ -4,12 +4,16 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 
 (This project is a **__work-in-progress__** and is not feature complete. Come back later when it's done-er!)
 
+## Screenshots
+
 <div align="center">
   <img src="./screenshots/prerelease.png" alt="Screenshot" />
+  <img src="./screenshots/prerelease2.png" alt="Screenshot" />
 </div>
 
 ## Features
 
+* Full-width fluid layout on any screen size
 * Dream queueing
 * Persistent settings
 * Persistent dream storage
