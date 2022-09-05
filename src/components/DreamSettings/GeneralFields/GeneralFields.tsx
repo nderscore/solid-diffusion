@@ -6,6 +6,7 @@ import { useUiSettingsField } from '~/state/UiSettings';
 
 import { GuidanceScaleField } from './GuidanceScaleField';
 import { HeightField } from './HeightField';
+import { SamplerField } from './SamplerField';
 import { WidthField } from './WidthField';
 
 export const GeneralFields: VoidComponent = () => {
@@ -22,6 +23,7 @@ export const GeneralFields: VoidComponent = () => {
       <WidthField />
       <HeightField />
       <GuidanceScaleField />
+      <SamplerField />
     </CollapsibleFieldgroup>
   );
 };
