@@ -9,6 +9,8 @@ export const en_us = {
   dreamAction: 'Action',
   dreamForget: 'Forget',
   dreamInfo: 'Info',
+  timestamp: 'Timestamp',
+  timestampFormatted: 'Dreamed on {{ date }} at {{ time }}',
   enabled: 'Enabled',
   gfpganStrength: 'GFPGAN stength',
   height: 'Height',
@@ -20,7 +22,7 @@ export const en_us = {
   weight_plural: 'Weights',
   width: 'Width',
   randomize: 'Randomize',
-  sampler: 'Sampler', // unused
+  sampler: 'Sampler',
   seed: 'Seed',
   submit: 'Submit',
   queue: 'Queue',

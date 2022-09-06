@@ -16,7 +16,7 @@ pre {
   /* variable to enable positioning/sizing based on navbar height */
   --navbar-height: 4rem;
   --grid-width: min(calc(100vw - 1rem), 32rem);
-  --grid-height: calc(var(--grid-width) + 6.25rem);
+  --grid-height: calc(var(--grid-width) + 3rem);
 }
 @media screen and (min-width: 1024px) {
   :root {
