@@ -1,9 +1,11 @@
 export const en_us = {
   close: 'Close',
   confirm: 'Confirm',
-  copyImage: 'Copy image to clipboard',
+  copyImage: 'Copy image',
+  copyPrompt: 'Copy prompt',
+  copySettings: 'Copy all settings to clipboard',
   cfgScale: 'Clip-free guidance scale',
-  cfgScaleShort: 'CFG scale', // unused
+  cfgScaleShort: 'CFG scale',
   disabled: 'Disabled',
   dream: 'Dream',
   dreamAction: 'Action',
@@ -22,13 +24,13 @@ export const en_us = {
   weight_plural: 'Weights',
   width: 'Width',
   randomize: 'Randomize',
+  queue: 'Queue',
   sampler: 'Sampler',
   seed: 'Seed',
   submit: 'Submit',
-  queue: 'Queue',
   realEsrganStrength: 'RealESRGAN strength',
-  reproduceImage: 'Reuse these settings (all)', // unused
-  reuseSettings: 'Reuse these settings (without prompt/image)', // unused
+  reproduceImage: 'Reproduce image settings exactly',
+  reuseSettings: 'Use only settings (no prompt/image)',
   settings: 'Settings',
   settingsFieldTheme: 'Theme',
   settingsFieldThemeDefault: '(Use OS setting)',
@@ -39,6 +41,7 @@ export const en_us = {
   settingsGroupRealEsrgan: 'RealESRGAN (Upscaling)',
   show: 'Show',
   steps: 'Steps',
+  useImageAsInput: 'Use this image as input image',
   x2scale: '2x scale',
   x4scale: '4x scale',
 } as const;
