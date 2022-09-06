@@ -14,17 +14,6 @@ export default defineConfig(({ mode }) => {
         '~': resolve(__dirname, './src'),
       },
     },
-    optimizeDeps: {
-      include: [
-        'lodash/camelCase',
-        'lodash/has',
-        'lodash/mapKeys',
-        'lodash/mapValues',
-        'lodash/snakeCase',
-        'property-expr',
-        'toposort',
-      ],
-    },
     build: {
       assetsDir: '.',
       cssCodeSplit: false,
