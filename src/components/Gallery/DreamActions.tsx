@@ -34,12 +34,14 @@ export const DreamActions: VoidComponent<DreamActionsProps> = (props) => {
 
   const reproduceImage = () => {
     const { initimg: _TODO, ...restSettings } = props.dream.settings;
+    restSettings.random = false;
     updateSettings(restSettings);
     selfClose();
   };
 
   const reproduceSettings = () => {
     const { initimg: _TODO, prompt: _p, ...restSettings } = props.dream.settings;
+    restSettings.random = false;
     updateSettings(restSettings);
     selfClose();
   };
@@ -49,6 +51,7 @@ export const DreamActions: VoidComponent<DreamActionsProps> = (props) => {
       return;
     }
     const { initimg: _i, ...restSettings } = props.dream.settings;
+    restSettings.random = false;
     await navigator.clipboard.writeText(JSON.stringify(restSettings, null, 2));
     selfClose();
   };
