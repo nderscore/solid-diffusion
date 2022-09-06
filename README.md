@@ -14,9 +14,9 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 ## Features
 
 * Full-width fluid layout on any screen size
-* Dream queueing
-* Persistent settings
-* Persistent dream storage
+* Dream queueing (don't wait - schedule multiple dreams to happen in sequence)
+* Persistent settings (local storage)
+* Persistent dream storage (IndexedDB)
 * Multiple themes (thanks [daisyUI](https://daisyui.com)!)
 * Settings UI controls
 
@@ -26,6 +26,7 @@ Minimalist web-based interface for Stable Diffusion with persistant storage in t
 * Image-to-image input with preview
 * Reproduce settings from logged dreams
 * Pipe dreams into image-to-image output
+* Quick save/load of settings
 * Basic image editing
 * Variants
 * Inpainting?
