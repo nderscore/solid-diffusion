@@ -59,3 +59,6 @@ export const remoteConfig = (
 ).SD_remoteConfig;
 
 export const featureDetectGFPGAN = !!remoteConfig?.gfpgan_model_exists;
+
+export const scrollbarBaseColors =
+  'scrollbar-track-base-200 scrollbar-thumb-base-300 hover:scrollbar-thumb-base-content hover:scrollbar-track-base-300 scrollbar-corner-base-300';

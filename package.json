@@ -42,6 +42,7 @@
     "solid-heroicons": "^3.0.1",
     "solid-js": "^1.5.1",
     "solid-popper": "^0.2.1",
+    "tailwind-scrollbar": "^2.0.1",
     "the-new-css-reset": "^1.7.3",
     "uuid": "^8.3.2"
   }

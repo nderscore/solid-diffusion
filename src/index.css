@@ -89,3 +89,11 @@ pre {
   transition: none !important; 
   animation: none !important;
 }
+
+/* disable scrollbars when no pointer device */
+@media not all and (pointer: fine) {
+  .scrollbar::-webkit-scrollbar,
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 0px;
+  }
+}

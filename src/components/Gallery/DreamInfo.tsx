@@ -1,6 +1,7 @@
 import { useI18n } from '@solid-primitives/i18n';
 import { createMemo, Show, VoidComponent } from 'solid-js';
 
+import { scrollbarBaseColors } from '~/constants';
 import { Dream } from '~/types';
 
 export type DreamInfoProps = {
@@ -46,7 +47,9 @@ export const DreamInfo: VoidComponent<DreamInfoProps> = (props) => {
           </Show>
         </div>
       </div>
-      <div class="overflow-auto card-body grow bg-base-300 bg-opacity-90 prose">
+      <div
+        class={`overflow-auto card-body grow bg-base-300 bg-opacity-90 prose scrollbar-thin ${scrollbarBaseColors}`}
+      >
         <h3>{props.dream.settings.prompt}</h3>
         <ul>
           <li>
@@ -72,7 +75,7 @@ export const DreamInfo: VoidComponent<DreamInfoProps> = (props) => {
         </ul>
       </div>
       <pre
-        class="h-32 bg-neutral text-neutral-content border-y-4 border-base-100 p-4 overflow-auto"
+        class={`h-32 bg-neutral text-neutral-content border-y-4 border-base-100 p-4 overflow-auto scrollbar-thin ${scrollbarBaseColors}`}
         onClick={(e) => window.getSelection()?.selectAllChildren(e.currentTarget)}
       >
         {JSON.stringify(
