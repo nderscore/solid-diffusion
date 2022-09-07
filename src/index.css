@@ -1,14 +1,10 @@
-/* TODO: clean this up */
 @import url('/node_modules/the-new-css-reset/css/reset.css');
+
+/* TODO: clean all this up and tailwindify where possible */
 
 /* unreset this property that daisyUI expects */
 select {
   align-items: center;
-}
-
-/* unreset pre */
-pre {
-  white-space: pre;
 }
 
 /* custom responsive variables */
@@ -66,6 +62,26 @@ pre {
   left: 0;
   width: max(2px, calc(100% * (var(--progress-step) / var(--progress-step-total))));
   height: 0.25rem;
+}
+
+/* checkerboards */
+.checkerboard-neutral {
+  --checkerboard-color: hsl(var(--nf) / 50%);
+  --checkerboard-size: 2rem;
+  --checkerboard-halfsize: calc(var(--checkerboard-size) / 2);
+  --checkerboard--halfsize: calc(var(--checkerboard-halfsize) * -1);
+
+  background-image: 
+    linear-gradient(45deg, var(--checkerboard-color) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--checkerboard-color) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, var(--checkerboard-color) 75%), 
+    linear-gradient(-45deg, transparent 75%, var(--checkerboard-color) 75%);
+  background-size: var(--checkerboard-size) var(--checkerboard-size);
+  background-position: 
+    0 0,
+    0 var(--checkerboard-halfsize),
+    var(--checkerboard-halfsize) var(--checkerboard--halfsize),
+    var(--checkerboard--halfsize) 0;
 }
 
 /* tailwind */

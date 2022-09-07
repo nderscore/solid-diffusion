@@ -23,8 +23,13 @@ export const DreamCard: VoidComponent<DreamCardProps> = (props) => {
   return (
     <div role="group" class="card card-compact card-dreamlog bg-base-200 shadow-xl">
       <button class="btn-glass">
-        <figure class="figure-dreamlog bg-neutral w-dreamlog-grid-width h-dreamlog-grid-width">
-          <img src={props.dream.result} alt={props.dream.settings.prompt} ref={image} />
+        <figure class="figure-dreamlog bg-neutral checkerboard-neutral w-dreamlog-grid-width h-dreamlog-grid-width">
+          <img
+            src={props.dream.result}
+            alt={props.dream.settings.prompt}
+            ref={image}
+            class="shadow-sm"
+          />
         </figure>
       </button>
       <div class="w-full justify-stretch">
