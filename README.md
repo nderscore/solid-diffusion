@@ -2,7 +2,7 @@
 
 Minimalist web-based interface for Stable Diffusion with persistant storage in the browser, built with SolidJS.
 
-This project is an **__alpha test__** and is not feature complete. 
+This project is an **__alpha test__**. It has not been heavily stress-tested, and is likely to change in the future as the backend dependencies continue to evolve.
 
 Come back later when it's done-er for the best experience!
 
@@ -20,6 +20,8 @@ Come back later when it's done-er for the best experience!
 * Dream queueing (don't wait - schedule multiple dreams to happen in sequence)
 * Persistent settings (in local storage)
 * Persistent dream storage (in IndexedDB)
+* Image-to-image input with preview
+* Pipe images from dream log into image input
 * Ability to reproduce exact settings from logged dreams
 * Copy (Image / Prompt / Settings) to clipboard
 * Multiple themes (thanks [daisyUI](https://daisyui.com)!)
@@ -27,9 +29,7 @@ Come back later when it's done-er for the best experience!
 ### Planned features
 
 * Quick save/load of settings
-* Image-to-image input with preview
 * Queue management (cancel queued or in-progress dreams)
-* Pipe images from dream log into image input
 * Basic image editing
 * Variants
 * Inpainting?
