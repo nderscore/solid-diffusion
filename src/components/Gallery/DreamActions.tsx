@@ -4,6 +4,7 @@ import { Icon } from 'solid-heroicons';
 import {
   arrowLeft,
   arrowLeftOnRectangle,
+  arrowUpOnSquare,
   chatBubbleLeftEllipsis,
   clipboardDocument,
   eyeSlash,
@@ -11,9 +12,11 @@ import {
 } from 'solid-heroicons/solid-mini';
 import { Accessor, VoidComponent } from 'solid-js';
 
+import { setImageFromImageElement } from '~/state/CurrentImage';
 import { forgetDream } from '~/state/DreamLog';
 import { dreamSettingsAtom } from '~/state/DreamSettings';
 import { Dream } from '~/types';
+import { imageElementToBlob } from '~/util/imageElementToBlob';
 
 export type DreamActionsProps = {
   dream: Dream;
@@ -33,14 +36,14 @@ export const DreamActions: VoidComponent<DreamActionsProps> = (props) => {
   };
 
   const reproduceImage = () => {
-    const { initimg: _TODO, ...restSettings } = props.dream.settings;
+    const { ...restSettings } = props.dream.settings;
     restSettings.random = false;
     updateSettings(restSettings);
     selfClose();
   };
 
   const reproduceSettings = () => {
-    const { initimg: _TODO, prompt: _p, ...restSettings } = props.dream.settings;
+    const { initimg: _i, prompt: _p, ...restSettings } = props.dream.settings;
     restSettings.random = false;
     updateSettings(restSettings);
     selfClose();
@@ -69,19 +72,7 @@ export const DreamActions: VoidComponent<DreamActionsProps> = (props) => {
     if (!image || !(await checkClipboardPermission())) {
       return;
     }
-    const width = props.dream.settings.width;
-    const height = props.dream.settings.height;
-    const canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-      return;
-    }
-    ctx.drawImage(image, 0, 0, width, height);
-    const blob = await new Promise<Blob | null>((resolve) => {
-      canvas.toBlob(resolve);
-    });
+    const blob = await imageElementToBlob(image);
     if (!blob) {
       return;
     }
@@ -100,19 +91,26 @@ export const DreamActions: VoidComponent<DreamActionsProps> = (props) => {
           <Icon path={eyeSlash} class="w-6 h-6" />
           <span>{t('dreamForget')}</span>
         </button>
-        <button class="btn self-stretch justify-between" disabled>
-          <span>
-            {`(TODO:) `}
-            {t('useImageAsInput')}
-          </span>
-        </button>
         <button class="btn self-stretch flex justify-between gap-4" onClick={reproduceImage}>
-          <Icon path={arrowLeftOnRectangle} class="w-6 h-6" />
+          <Icon path={arrowUpOnSquare} class="w-6 h-6" />
           <span>{t('reproduceImage')}</span>
         </button>
         <button class="btn self-stretch flex justify-between gap-4" onClick={reproduceSettings}>
           <Icon path={arrowLeft} class="w-6 h-6" />
           <span>{t('reuseSettings')}</span>
+        </button>
+        <button
+          class="btn self-stretch justify-between"
+          onClick={() => {
+            const image = props.image();
+            if (image) {
+              setImageFromImageElement(image);
+              selfClose();
+            }
+          }}
+        >
+          <Icon path={arrowLeftOnRectangle} class="w-6 h-6" />
+          <span>{t('useImageAsInput')}</span>
         </button>
         <button class="btn self-stretch flex justify-between gap-4" onClick={copySettings}>
           <Icon path={clipboardDocument} class="w-6 h-6" />

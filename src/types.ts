@@ -36,7 +36,7 @@ export type DreamSettings = {
   /**
    * Initial image (image-to-image)
    */
-  initimg: Blob | null;
+  initimg: string | null;
   /**
    * Denoising strength (image-to-image)
    */

@@ -8,6 +8,7 @@ import { DreamSettings } from '~/types';
 import { mapDreamSettingsToPostBody } from '~/util/mapDreamSettingsToPostBody';
 import { randomSeed } from '~/util/randomSeed';
 
+import { currentImageDataAtom } from './CurrentImage';
 import { logDream } from './DreamLog';
 import { dreamSettingsAtom } from './DreamSettings';
 
@@ -151,11 +152,12 @@ export const queueDream = debounce(() => {
     return;
   }
   const seed = settings.random ? randomSeed() : settings.seed || randomSeed();
+  const initimg = currentImageDataAtom.getState();
   dreamQueueAtom.enqueue.dispatch({
     id: uuidv4(),
     settings: {
       ...settings,
-      initimg: null, // TODO: image-to-image
+      initimg,
       seed,
     },
   });

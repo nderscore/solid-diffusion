@@ -10,7 +10,7 @@ export const mapDreamSettingsToPostBody = (settings: DreamSettings) => {
     width: `${settings.width}`,
     height: `${settings.height}`,
     seed: `${settings.seed}`,
-    initimg: null, // TODO: image-to-image
+    initimg: settings.initimg,
     strength: settings.initimg ? `${settings.strength}` : '0',
     fit: settings.initimg && settings.fit ? 'on' : '',
     gfpgan_strength: settings.gfpgan_enabled ? `${settings.gfpgan_strength}` : 0,
