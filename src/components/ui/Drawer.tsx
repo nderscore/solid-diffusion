@@ -14,7 +14,7 @@ export const Drawer: ParentComponent<JSX.IntrinsicElements['div']> = (props) => 
         'fixed lg:relative',
         'flex flex-col justify-stretch',
         'shadow-xl lg:shadow-none',
-        'overflow-x-hidden overflow-y-auto scrollbar-thin lg:scrollbar',
+        'overflow-x-hidden overflow-y-auto scrollbar-thin',
         scrollbarBaseColors,
         localProps.class
       )}

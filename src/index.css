@@ -90,10 +90,10 @@ pre {
   animation: none !important;
 }
 
-/* disable scrollbars when no pointer device */
+/* force shrunken scrollbar for non mouse users */
 @media not all and (pointer: fine) {
   .scrollbar::-webkit-scrollbar,
   .scrollbar-thin::-webkit-scrollbar {
-    width: 0px;
+    width: 0.25rem;
   }
 }
