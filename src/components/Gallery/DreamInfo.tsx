@@ -74,16 +74,6 @@ export const DreamInfo: VoidComponent<DreamInfoProps> = (props) => {
           </li>
         </ul>
       </div>
-      <pre
-        class={`h-32 bg-neutral text-neutral-content border-y-4 border-base-100 p-4 overflow-auto scrollbar-thin ${scrollbarBaseColors}`}
-        onClick={(e) => window.getSelection()?.selectAllChildren(e.currentTarget)}
-      >
-        {JSON.stringify(
-          props.dream.settings,
-          (key, val) => (key === 'initimg' ? '(TODO)' : val),
-          2
-        )}
-      </pre>
     </div>
   );
 };
